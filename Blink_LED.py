@@ -28,10 +28,11 @@ x = 0
 while x < blink_times * 2:
     if i:
         GPIO.output(blinkPin, GPIO.HIGH)
-        print("switching to high")
+        stat = "high"
     else:
         GPIO.output(blinkPin, GPIO.LOW)
-        print("switching to low")
+        stat = "low"
+    print("Pin#{} status: {} {}".format(blinkPin, "OUT", stat))
     time.sleep(delay_time)
     i = not i
     x += 1
